@@ -22,7 +22,9 @@ const Login = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="page-container">
       <div className="w-[400px] mx-auto my-10">
-        <div className="text-3xl text-center">Login</div>
+        <div className="p-2 mb-4 text-3xl text-center text-white bg-red-500">
+          Login
+        </div>
 
         <div className="flex flex-col gap-3">
           <label htmlFor="name">Email</label>
@@ -51,10 +53,10 @@ const Login = () => {
         {errors.password && (
           <p className="text-sm text-red-500">Please inter your password</p>
         )}
-        <button className="w-full p-5 mt-5 text-white bg-blue-500 rounded-lg">
+        <button className="w-full p-5 mt-5 mb-5 text-white bg-blue-500 rounded-lg">
           Submit
         </button>
-        <NavLink to="/register">Register ?</NavLink>
+        <NavLink to="/register">Don't have an account ? Create one !</NavLink>
       </div>
     </form>
   );

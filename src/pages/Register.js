@@ -23,7 +23,9 @@ const Register = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="page-container">
       <div className="w-[400px] mx-auto my-10">
-        <div className="text-3xl text-center">Register</div>
+        <div className="p-2 mb-4 text-3xl text-center text-white bg-red-500">
+          Register
+        </div>
         <div className="flex flex-col gap-3">
           <label htmlFor="name">Name</label>
           <input
