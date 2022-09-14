@@ -49,7 +49,7 @@ const fruitsSlice = createSlice({
       }
     },
 
-    clearCart: (state, action) => {
+    clearCart: (state) => {
       state.cart = [];
     },
   },

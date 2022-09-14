@@ -20,7 +20,7 @@ const Detail = () => {
         <div className="m-5">
           <div className="text-3xl font-bold ">{item.title}</div>
           <div className="text-2xl text-red-500 ">Price: {item.price}$</div>
-          <div className="text-lg font-bold ">{item.desc}</div>
+          <div className="text-lg font-bold">{item.desc}</div>
           <button
             onClick={() => hanldeAddToCart(item)}
             className="p-2 mt-2 text-xl text-white bg-red-500 rounded-lg"

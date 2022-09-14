@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import ItemCart from "../conponents/ItemCart";
 
 import {
   clearCart,
@@ -11,16 +12,13 @@ import {
 const Card = () => {
   const { cart } = useSelector((state) => state.fruits);
   const dispacth = useDispatch();
-  console.log(cart);
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     let total = 0;
-
     cart.forEach((item) => {
       total += item.price * item.cartQuantity;
     });
-
     setTotalPrice(total);
   }, [cart, setTotalPrice]);
   const hanldeDelToCart = (item) => {
@@ -50,32 +48,13 @@ const Card = () => {
             </div>
             {cart.length > 0 &&
               cart.map((item) => (
-                <div
+                <ItemCart
                   key={item.id}
-                  className="grid items-center grid-cols-6 gap-7"
-                >
-                  <img src={item.img} alt="" />
-                  <h3>{item.title}</h3>
-                  <h3>${item.price}</h3>
-                  <h3>
-                    <button
-                      className="mr-2 fa-regular fa-square-plus"
-                      onClick={() => hanldePlusCart(item)}
-                    ></button>
-                    <span>{item.cartQuantity}</span>
-                    <button
-                      className="ml-2 fa-regular fa-square-minus"
-                      onClick={() => hanldeMinusCart(item)}
-                    ></button>
-                  </h3>
-                  <h3>${item.price * item.cartQuantity}</h3>
-                  <h3>
-                    <button
-                      className="fa-solid fa-trash-can"
-                      onClick={() => hanldeDelToCart(item)}
-                    ></button>
-                  </h3>
-                </div>
+                  item={item}
+                  hanldeDelToCart={hanldeDelToCart}
+                  hanldeMinusCart={hanldeMinusCart}
+                  hanldePlusCart={hanldePlusCart}
+                ></ItemCart>
               ))}
             <button
               onClick={() => hanldeClearCart()}
@@ -86,12 +65,9 @@ const Card = () => {
           </div>
           <div className="flex items-center justify-between p-5 shadow-lg">
             <span className="text-xl">TOTAL: ${totalPrice}</span>
-            <NavLink
-              to="/pay"
-              className="p-2 text-white bg-blue-400 rounded-lg"
-            >
+            <div className="p-2 text-white bg-blue-400 rounded-lg">
               Paying Now
-            </NavLink>
+            </div>
           </div>
         </div>
       ) : (
