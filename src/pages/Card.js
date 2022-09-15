@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
 import ItemCart from "../conponents/ItemCart";
 
 import {
@@ -36,16 +35,8 @@ const Card = () => {
   return (
     <div className=" page-container">
       {cart.length > 0 ? (
-        <div className="">
-          <div className="p-5 text-lg text-center shadow-sm ">
-            <div className="grid grid-cols-6 gap-7">
-              <h3>IMAGE</h3>
-              <h3>TITLE</h3>
-              <h3>PRICE</h3>
-              <h3>QUANTITY</h3>
-              <h3>TOTAL</h3>
-              <div></div>
-            </div>
+        <div className="flex flex-row">
+          <div className="w-[70%] text-lg text-center">
             {cart.length > 0 &&
               cart.map((item) => (
                 <ItemCart
@@ -63,15 +54,17 @@ const Card = () => {
               Clear Cart
             </button>
           </div>
-          <div className="flex items-center justify-between p-5 shadow-lg">
-            <span className="text-xl">TOTAL: ${totalPrice}</span>
-            <div className="p-2 text-white bg-blue-400 rounded-lg">
+          <div className="w-[30%] h-[150px] m-5 p-5 shadow-lg text-xl">
+            <span>TOTAL: ${totalPrice}</span>
+            <div className="p-2 mt-5 text-white bg-blue-400 rounded-lg">
               Paying Now
             </div>
           </div>
         </div>
       ) : (
-        <div className="m-10 text-3xl font-bold text-red-500 ">CART EMTY</div>
+        <div className="p-2 m-10 text-2xl font-bold text-center text-red-500 ">
+          CART EMTY
+        </div>
       )}
     </div>
   );

@@ -7,8 +7,11 @@ const ItemCart = ({
   hanldePlusCart,
 }) => {
   return (
-    <div key={item.id} className="grid items-center grid-cols-6 gap-7">
-      <img src={item.img} alt="" />
+    <div
+      key={item.id}
+      className="grid items-center grid-cols-6 m-5 border rounded-lg gap-7"
+    >
+      <img src={item.img} alt="" className="w-[100px] h-[100px]" />
       <h3>{item.title}</h3>
       <h3>${item.price}</h3>
       <h3>
@@ -25,7 +28,7 @@ const ItemCart = ({
       <h3>${item.price * item.cartQuantity}</h3>
       <h3>
         <button
-          className="fa-solid fa-trash-can"
+          className="w-full fa-solid fa-trash-can"
           onClick={() => hanldeDelToCart(item)}
         ></button>
       </h3>

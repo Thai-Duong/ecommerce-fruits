@@ -7,7 +7,7 @@ const item = fruit;
 
 const ItemList = () => {
   return (
-    <div className="w-full list-items">
+    <div className="w-full text-center list-items">
       <Swiper grabCursor={"true"} spaceBetween={20} slidesPerView={"auto"}>
         {item.length > 0 &&
           item.map((item) => (

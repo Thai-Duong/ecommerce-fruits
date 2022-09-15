@@ -16,7 +16,7 @@ const ItemCard = ({ item }) => {
       <div className="text-lg text-red-700 bg-primary">${item.price}</div>
       <button
         onClick={() => hanldeAddToCart(item)}
-        className="p-2 m-2 text-xl text-white bg-red-500 rounded-lg"
+        className="w-full text-xl text-white bg-red-500 rounded-lg "
       >
         ADD TO CART
       </button>
