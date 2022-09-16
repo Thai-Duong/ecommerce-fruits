@@ -1,9 +1,10 @@
 import React from "react";
 
-const Banner = ({ type }) => {
+const Banner = ({ type, className, children }) => {
   return (
-    <div className="">
-      <img src={type} alt="" className="object-cover w-full h-full" />
+    <div>
+      <img src={type} alt="" className={className} />
+      {children}
     </div>
   );
 };
