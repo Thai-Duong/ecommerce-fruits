@@ -2,7 +2,7 @@
 <h3 align="center">A frontend developer from VietNam</h3>
 <h3 align="left">Fruits Shop:</h3>
 
-- 🔭 Live Demo [FruitsShop Website](ecommerce-fruits-nu.vercel.app)
+- 🔭 Live Demo (ecommerce-fruits-nu.vercel.app)
 
 - 📫 How to reach me **Thaiduong.080300@gmail.com**
 
