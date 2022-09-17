@@ -37,7 +37,8 @@ const Card = () => {
     <Fragment>
       <Banner
         type="https://fruitshop.7uptheme.net//wp-content/uploads/2017/04/banner-list.jpg"
-        className="h-[400px] w-full object-cover"
+        className="h-[200px] w-full object-cover"
+        children="Cart"
       ></Banner>
       <div className="page-container">
         {cart.length > 0 ? (

@@ -2,9 +2,11 @@ import React from "react";
 
 const Banner = ({ type, className, children }) => {
   return (
-    <div>
+    <div className="relative">
       <img src={type} alt="" className={className} />
-      {children}
+      <div className="absolute text-4xl text-white left-10 top-2/4">
+        {children}
+      </div>
     </div>
   );
 };

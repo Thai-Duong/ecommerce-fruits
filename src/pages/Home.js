@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <Fragment>
       <Banner
-        type="https://fruitshop.7uptheme.net/wp-content/uploads/2017/04/slide1.jpg"
+        type="https://hoaquafuji.com/storage/app/uploads/public/fb9/03f/f84/thumb__1920_0_0_0_auto.jpg"
         className="relative"
       ></Banner>
       <div className="text-4xl page-container">
