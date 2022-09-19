@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Banner from "../conponents/Banner";
+import Input from "../conponents/Input";
 const schema = yup
   .object({
     name: yup.string().required(),
@@ -10,11 +11,12 @@ const schema = yup
     adress: yup.string().required(),
     phone: yup.string().required(),
     password: yup.string().required(),
+    accept: yup.boolean().required(),
   })
   .required();
 const Register = () => {
   const {
-    register,
+    control,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -32,68 +34,77 @@ const Register = () => {
         <div className="w-[400px] mx-auto my-10">
           <div className="flex flex-col gap-3">
             <label htmlFor="name">Name</label>
-            <input
-              {...register("name")}
-              id="name"
+            <Input
+              name="name"
               type="text"
+              control={control}
               placeholder="Enter your name"
-              className="p-4 bg-white border border-gray-500 rounded-lg outline-none focus:border-blue-500"
-            />
+            ></Input>
           </div>
           {errors.name && (
             <p className="text-sm text-red-500">Please inter your name</p>
           )}
           <div className="flex flex-col gap-3">
             <label htmlFor="name">Email</label>
-            <input
-              {...register("email")}
-              id="email"
-              type="text"
+            <Input
+              name="email"
+              type="email"
+              control={control}
               placeholder="Enter your email"
-              className="p-4 bg-white border border-gray-500 rounded-lg outline-none focus:border-blue-500"
-            />
+            ></Input>
           </div>
           {errors.email && (
             <p className="text-sm text-red-500">Please inter your email</p>
           )}
           <div className="flex flex-col gap-3">
             <label htmlFor="adress">Adress</label>
-            <input
-              {...register("adress")}
-              id="adress"
+            <Input
+              name="adress"
               type="text"
+              control={control}
               placeholder="Enter your adress"
-              className="p-4 bg-white border border-gray-500 rounded-lg outline-none focus:border-blue-500"
-            />
+            ></Input>
           </div>
           {errors.adress && (
             <p className="text-sm text-red-500">Please inter your adress</p>
           )}
           <div className="flex flex-col gap-3">
             <label htmlFor="phone">Phone</label>
-            <input
-              {...register("phone")}
-              id="phone"
+            <Input
+              name="phone"
               type="number"
+              control={control}
               placeholder="Enter your phone"
-              className="p-4 bg-white border border-gray-500 rounded-lg outline-none focus:border-blue-500"
-            />
+            ></Input>
           </div>
           {errors.phone && (
             <p className="text-sm text-red-500">Please inter your phone</p>
           )}
           <div className="flex flex-col gap-3">
             <label htmlFor="password">Password</label>
-            <input
-              {...register("password")}
-              id="password"
-              type="password"
+            <Input
+              name="password"
+              type="text"
+              control={control}
               placeholder="Enter your password"
-              className="p-4 bg-white border border-gray-500 rounded-lg outline-none focus:border-blue-500"
-            />
+            ></Input>
           </div>
           {errors.password && (
             <p className="text-sm text-red-500">Please inter your password</p>
+          )}
+          <div>
+            <Input
+              name="accept"
+              type="checkbox"
+              control={control}
+              placeholder="Pleas accept terms and conditions"
+            ></Input>
+            <span>I accept the terms and conditions</span>
+          </div>
+          {errors.accept && (
+            <p className="text-sm text-red-500 ">
+              Please accept the terms and conditions
+            </p>
           )}
           <button className="w-full p-5 mt-5 text-white bg-blue-500 rounded-lg">
             Submit

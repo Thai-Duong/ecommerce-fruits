@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import Banner from "../conponents/Banner";
 import ItemCart from "../conponents/ItemCart";
 
@@ -10,17 +11,8 @@ import {
   increaseCart,
 } from "../redux/fruitsSlice";
 const Card = () => {
-  const { cart } = useSelector((state) => state.fruits);
+  const { cart, totalAmount } = useSelector((state) => state.fruits);
   const dispacth = useDispatch();
-  const [totalPrice, setTotalPrice] = useState(0);
-
-  useEffect(() => {
-    let total = 0;
-    cart.forEach((item) => {
-      total += item.price * item.cartQuantity;
-    });
-    setTotalPrice(total);
-  }, [cart, setTotalPrice]);
   const hanldeDelToCart = (item) => {
     dispacth(delToCart(item));
   };
@@ -56,20 +48,20 @@ const Card = () => {
                 ))}
               <button
                 onClick={() => hanldeClearCart()}
-                className="p-2 m-2 text-white bg-red-600"
+                className="p-2 m-2 text-white bg-red-600 rounded-lg"
               >
                 Clear Cart
               </button>
             </div>
             <div className="w-[30%] h-[150px] m-5 p-5 shadow-lg text-xl">
-              <span>TOTAL: ${totalPrice}</span>
-              <div className="p-2 mt-5 text-white bg-blue-400 rounded-lg">
-                Paying Now
+              <span>TOTAL: ${totalAmount}</span>
+              <div className="p-2 mt-5 text-center text-white bg-blue-400 rounded-lg">
+                <NavLink to="/checkout">Paying Now</NavLink>
               </div>
             </div>
           </div>
         ) : (
-          <div className="p-2 m-10 text-2xl font-bold text-center text-red-500 ">
+          <div className="p-10 m-10 text-2xl font-bold text-center text-red-500 ">
             CART EMTY
           </div>
         )}

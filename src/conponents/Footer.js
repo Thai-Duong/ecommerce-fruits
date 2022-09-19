@@ -13,8 +13,8 @@ const Footer = () => {
       <div className="flex flex-col gap-y-3">
         <div className="text-lg font-bold">Website</div>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/">Product</NavLink>
-        <NavLink to="/">About</NavLink>
+        <NavLink to="/product">Product</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
       </div>
       <div className="flex flex-col gap-y-3">
         <div className="text-lg font-bold">Contact</div>

@@ -17,7 +17,7 @@ const Header = () => {
         </NavLink>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/product">Product</NavLink>
-        <NavLink to="/feedback">FeedBack</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
       </div>
       <div className="flex items-center justify-center gap-3 text-3xl main">
         <NavLink to="/login" className="fa-solid fa-user"></NavLink>

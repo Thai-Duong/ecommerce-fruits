@@ -4,6 +4,7 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
 import Banner from "../conponents/Banner";
+import Input from "../conponents/Input";
 const schema = yup
   .object({
     email: yup.string().email().required(),
@@ -14,7 +15,7 @@ const onSubmit = (data) => console.log(data);
 
 const Login = () => {
   const {
-    register,
+    control,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -30,14 +31,13 @@ const Login = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="page-container">
         <div className="w-[400px] mx-auto my-10">
           <div className="flex flex-col gap-3">
-            <label htmlFor="name">Email</label>
-            <input
-              {...register("email")}
-              id="email"
-              type="text"
+            <label htmlFor="email">Email</label>
+            <Input
+              name="email"
+              type="email"
+              control={control}
               placeholder="Enter your email"
-              className="p-4 bg-white border border-gray-500 rounded-lg outline-none focus:border-blue-500"
-            />
+            ></Input>
           </div>
           {errors.email && (
             <p className="text-sm text-red-500">Please inter your email</p>
@@ -45,13 +45,12 @@ const Login = () => {
 
           <div className="flex flex-col gap-3">
             <label htmlFor="password">Password</label>
-            <input
-              {...register("password")}
-              id="password"
+            <Input
+              name="password"
               type="password"
+              control={control}
               placeholder="Enter your password"
-              className="p-4 bg-white border border-gray-500 rounded-lg outline-none focus:border-blue-500"
-            />
+            ></Input>
           </div>
           {errors.password && (
             <p className="text-sm text-red-500">Please inter your password</p>

@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Banner from "../conponents/Banner";
+import Input from "../conponents/Input";
 const schema = yup
   .object({
     name: yup.string().required(),
@@ -12,9 +13,9 @@ const schema = yup
     password: yup.string().required(),
   })
   .required();
-const Feedback = () => {
+const Contact = () => {
   const {
-    register,
+    control,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -26,75 +27,70 @@ const Feedback = () => {
       <Banner
         type="https://fruitshop.7uptheme.net//wp-content/uploads/2017/04/banner-list.jpg"
         className="h-[200px] w-full object-cover"
-        children="Feedback"
+        children="Contact"
       ></Banner>
       <form onSubmit={handleSubmit(onSubmit)} className="page-container">
         <div className="w-[500px] mx-auto my-10 ">
-          <div className="p-2 mb-4 text-3xl text-center text-white bg-red-500">
+          <div className="p-2 mb-4 text-3xl text-center text-black ">
             Feedback
           </div>
-          <div className="flex flex-col gap-3 mb-4">
-            <input
-              {...register("name")}
-              id="name"
+          <div className="flex flex-col gap-3 mt-5">
+            <Input
+              name="name"
               type="text"
+              control={control}
               placeholder="Enter your name"
-              className="p-4 bg-white border border-gray-500 rounded-lg outline-none focus:border-blue-500"
-            />
+            ></Input>
           </div>
           {errors.name && (
             <p className="text-sm text-red-500">Please inter your name</p>
           )}
-          <div className="flex flex-col gap-3 mb-4">
-            <input
-              {...register("email")}
-              id="email"
-              type="text"
+          <div className="flex flex-col gap-3 mt-5">
+            <Input
+              name="email"
+              type="email"
+              control={control}
               placeholder="Enter your email"
-              className="p-4 bg-white border border-gray-500 rounded-lg outline-none focus:border-blue-500"
-            />
+            ></Input>
           </div>
           {errors.email && (
             <p className="text-sm text-red-500">Please inter your email</p>
           )}
-          <div className="flex flex-col gap-3 mb-4">
-            <input
-              {...register("adress")}
-              id="adress"
+          <div className="flex flex-col gap-3 mt-5">
+            <Input
+              name="adress"
               type="text"
+              control={control}
               placeholder="Enter your adress"
-              className="p-4 bg-white border border-gray-500 rounded-lg outline-none focus:border-blue-500"
-            />
+            ></Input>
           </div>
           {errors.adress && (
             <p className="text-sm text-red-500">Please inter your adress</p>
           )}
-          <div className="flex flex-col gap-3 mb-4">
-            <input
-              {...register("phone")}
-              id="phone"
+          <div className="flex flex-col gap-3 mt-5">
+            <Input
+              name="phone"
               type="number"
+              control={control}
               placeholder="Enter your phone"
-              className="p-4 bg-white border border-gray-500 rounded-lg outline-none focus:border-blue-500"
-            />
+            ></Input>
           </div>
           {errors.phone && (
             <p className="text-sm text-red-500">Please inter your phone</p>
           )}
-          <div className="flex flex-col gap-3 mb-4">
+          <div className="flex flex-col gap-3 mt-5">
             <textarea
-              {...register("password")}
-              id="description"
+              name="text"
               type="text"
-              placeholder="Enter your description"
+              control={control}
+              placeholder="Enter"
               className="p-4 bg-white border border-gray-500 rounded-lg outline-none focus:border-blue-500"
-            />
+            ></textarea>
           </div>
           {errors.password && (
-            <p className="text-sm text-red-500">
-              Please inter your description
-            </p>
+            <p className="text-sm text-red-500">Please inter your password</p>
           )}
+
           <button className="w-full p-5 mt-5 text-white bg-blue-500 rounded-lg">
             Send
           </button>
@@ -104,4 +100,4 @@ const Feedback = () => {
   );
 };
 
-export default Feedback;
+export default Contact;
