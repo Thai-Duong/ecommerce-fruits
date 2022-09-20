@@ -9,7 +9,7 @@ const Home = () => {
         type="https://hoaquafuji.com/storage/app/uploads/public/fb9/03f/f84/thumb__1920_0_0_0_auto.jpg"
         className="relative"
       ></Banner>
-      <div className="text-4xl page-container">
+      <div className="text-3xl page-container">
         <div className="flex flex-row justify-between m-10">
           <div className="text-green-500 fa-solid fa-truck"> Free Shipping</div>
           <div className="text-green-500 fa-solid fa-truck"> Free Refund</div>

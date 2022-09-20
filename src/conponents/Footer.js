@@ -2,12 +2,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
-    <div className="bg-[#dd1c2e] w-full h-[250px] flex  items-center mt-5 justify-center gap-40 text-white ">
+    <div className="bg-[#dd1c2e] px-40 p-5 grid grid-cols-4 gap-20 items-center mt-5 justify-center text-white ">
       <NavLink to="/">
         <img
           src="https://pbs.twimg.com/profile_images/902519285616041984/ige9G6Ok_400x400.jpg"
           alt=""
-          className="w-[200px] "
+          className="w-[150px] "
         />
       </NavLink>
       <div className="flex flex-col gap-y-3">

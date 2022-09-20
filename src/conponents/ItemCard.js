@@ -8,7 +8,7 @@ const ItemCard = ({ item }) => {
     dispacth(addToCart(item));
   };
   return (
-    <div className="relative w-[200px] h-auto bg-[#fde4e4] text-black  m-5 border rounded-lg">
+    <div className="relative w-[200px] bg-[#fde4e4] text-black  m-5 border rounded-lg ">
       <NavLink to={`/products/${item.id}`}>
         <img src={item.img} alt="" className="h-[200px] object-cover" />
       </NavLink>
