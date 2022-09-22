@@ -4,7 +4,7 @@ export const fruit = [
     title: "Watermelon",
     price: 24,
     img: "https://grovefresh.vn/Data/Sites/1/Product/11835/d%C6%B0a-h%E1%BA%A5u-kh%C3%B4ng-h%E1%BA%A1t.jpg",
-    category: "Trái Cây Trong Nước",
+    category: "Trái Cây Trong ",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque. ",
   },
   {

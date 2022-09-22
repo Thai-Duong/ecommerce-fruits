@@ -10,7 +10,7 @@ const Product = () => {
     if (search.valueOf === "") {
       return item;
     }
-    if (item.title.toLowerCase().includes(search.toLowerCase())) {
+    if (item.category.toLowerCase().includes(search.toLowerCase())) {
       return item;
     } else {
       return console.log("Not found");
@@ -32,9 +32,18 @@ const Product = () => {
             onChange={(e) => setSearch(e.target.value)}
             className="px-10 py-2 border"
           />
+          <div className="">
+            <select className="w-50">
+              <option>Default</option>
+              <option value="Trái Cây Trong">Alphabetically, A-Z</option>
+              <option value="descending">Alphabetically, Z-A</option>
+              <option value="high-price">High Price</option>
+              <option value="low-price">Low Price</option>
+            </select>
+          </div>
         </div>
         <div className="grid grid-cols-5 gap-4 text-center">
-          {item.length > 0 &&
+          {searchedProduct.length > 0 &&
             searchedProduct.map((item) => (
               <div key={item.id}>
                 <ItemCard item={item}></ItemCard>

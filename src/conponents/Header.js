@@ -6,8 +6,8 @@ const Header = () => {
   const { cart } = useSelector((state) => state.fruits);
 
   return (
-    <header className="flex bg-[#dd1c2e] justify-between p-3 text-xl text-white ">
-      <div className="flex items-center justify-center gap-3 font-bold main">
+    <header className="flex bg-[#dd1c2e] justify-between p-2 text-xl w-[100%] text-white fixed top-0 z-[1000] ">
+      <div className="flex items-center justify-center gap-3 font-bold">
         <NavLink to="/">
           <img
             src="https://pbs.twimg.com/profile_images/902519285616041984/ige9G6Ok_400x400.jpg"

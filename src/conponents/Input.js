@@ -11,7 +11,7 @@ const Input = ({ control, ...props }) => {
     <input
       {...field}
       {...props}
-      className="w-full p-4 mt-2 mb-2 bg-white border border-gray-500 rounded-lg outline-none focus:border-blue-500"
+      className="w-full p-4 my-2 bg-white border border-gray-500 rounded-lg outline-none focus:border-blue-500"
     ></input>
   );
 };
