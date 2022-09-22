@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Banner from "../conponents/Banner";
 import ItemCard from "../conponents/ItemCard";
 import { fruit } from "../FakeData";
@@ -6,16 +6,32 @@ const item = fruit;
 
 const Product = () => {
   const [search, setSearch] = useState("");
-  const searchedProduct = item.filter((item) => {
-    if (search.valueOf === "") {
-      return item;
+  const [category, setCategory] = useState("All");
+  const [allProducts, setAllProducts] = useState(item);
+  useEffect(() => {
+    if (category === "All") {
+      setAllProducts(item);
     }
-    if (item.category.toLowerCase().includes(search.toLowerCase())) {
-      return item;
-    } else {
-      return console.log("Not found");
+    if (category === "vietnam") {
+      const pro = item.filter((item) => item.category === "vietnam");
+      setAllProducts(pro);
     }
-  });
+    if (category === "foreign") {
+      const pro = item.filter((item) => item.category === "foreign");
+      setAllProducts(pro);
+    }
+    // const searchedProduct = item.filter((item) => {
+    //   if (search.valueOf === "") {
+    //     return item;
+    //   }
+    //   if (item.category.toLowerCase().includes(search.toLowerCase())) {
+    //     return item;
+    //   } else {
+    //     return console.log("Not found");
+    //   }
+    // });
+  }, [category]);
+
   return (
     <Fragment>
       <Banner
@@ -23,8 +39,8 @@ const Product = () => {
         className="h-[200px] w-full object-cover"
         children="All Product"
       ></Banner>
-      <div className="mt-5 page-container">
-        <div className="m-5">
+      <div className="flex mt-5 page-container">
+        <div className="mt-5">
           <input
             type="text"
             placeholder="You want to find"
@@ -32,19 +48,33 @@ const Product = () => {
             onChange={(e) => setSearch(e.target.value)}
             className="px-10 py-2 border"
           />
-          <div className="">
-            <select className="w-50">
-              <option>Default</option>
-              <option value="Trái Cây Trong">Alphabetically, A-Z</option>
-              <option value="descending">Alphabetically, Z-A</option>
-              <option value="high-price">High Price</option>
-              <option value="low-price">Low Price</option>
-            </select>
+          <div className="flex flex-col mt-5 text-xl">
+            <button
+              className="w-full p-2 mt-1 border"
+              category={"All"}
+              onClick={() => setCategory("All")}
+            >
+              All
+            </button>
+            <button
+              className="w-full p-2 mt-1 border"
+              category={"vietnam"}
+              onClick={() => setCategory("vietnam")}
+            >
+              Domestic
+            </button>
+            <button
+              className="w-full p-2 mt-1 border"
+              category={"foreign"}
+              onClick={() => setCategory("foreign")}
+            >
+              Foreign
+            </button>
           </div>
         </div>
-        <div className="grid grid-cols-5 gap-4 text-center">
-          {searchedProduct.length > 0 &&
-            searchedProduct.map((item) => (
+        <div className="grid grid-cols-4 gap-4 text-center">
+          {allProducts.length > 0 &&
+            allProducts.map((item) => (
               <div key={item.id}>
                 <ItemCard item={item}></ItemCard>
               </div>

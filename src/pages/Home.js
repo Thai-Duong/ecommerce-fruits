@@ -1,7 +1,6 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Banner from "../conponents/Banner";
 import ItemList from "../conponents/ItemList";
-
 const Home = () => {
   return (
     <Fragment>
