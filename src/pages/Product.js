@@ -39,16 +39,16 @@ const Product = () => {
         className="h-[200px] w-full object-cover"
         children="All Product"
       ></Banner>
-      <div className="flex mt-5 page-container">
+      <div className="mt-5 page-container">
         <div className="mt-5">
-          <input
+          {/* <input
             type="text"
             placeholder="You want to find"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="px-10 py-2 border"
-          />
-          <div className="flex flex-col mt-5 text-xl">
+          /> */}
+          <div className="flex mt-5 text-xl">
             <button
               className="w-full p-2 mt-1 border"
               category={"All"}
@@ -72,7 +72,7 @@ const Product = () => {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-4 gap-4 text-center">
+        <div className="grid grid-cols-3 text-center lg:grid-cols-5">
           {allProducts.length > 0 &&
             allProducts.map((item) => (
               <div key={item.id}>

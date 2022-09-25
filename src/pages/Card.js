@@ -1,9 +1,8 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import Banner from "../conponents/Banner";
 import ItemCart from "../conponents/ItemCart";
-
 import {
   clearCart,
   delToCart,
@@ -34,8 +33,8 @@ const Card = () => {
       ></Banner>
       <div className="page-container">
         {cart.length > 0 ? (
-          <div className="flex flex-row">
-            <div className="w-[70%] text-lg text-center">
+          <div className="flex flex-col text-sm lg:flex-row lg:text-lg">
+            <div className="lg:w-[70%]  text-center">
               {cart.length > 0 &&
                 cart.map((item) => (
                   <ItemCart
@@ -53,7 +52,7 @@ const Card = () => {
                 Clear Cart
               </button>
             </div>
-            <div className="w-[30%] h-[150px] m-5 p-5 shadow-lg text-xl">
+            <div className="lg:w-[30%] h-[150px] m-5 p-5 shadow-lg ">
               <span>TOTAL: ${totalAmount}</span>
               <div className="p-2 mt-5 text-center text-white bg-blue-400 rounded-lg">
                 <NavLink to="/checkout">Paying Now</NavLink>

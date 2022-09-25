@@ -8,7 +8,7 @@ const Home = () => {
         type="https://hoaquafuji.com/storage/app/uploads/public/fb9/03f/f84/thumb__1920_0_0_0_auto.jpg"
         className="relative"
       ></Banner>
-      <div className="text-3xl page-container">
+      <div className="text-[10px]  md:text-3xl page-container">
         <div className="flex flex-row justify-between m-10">
           <div className="text-green-500 fa-solid fa-truck"> Free Shipping</div>
           <div className="text-green-500 fa-solid fa-truck"> Free Refund</div>
@@ -16,7 +16,7 @@ const Home = () => {
         </div>
       </div>
       <div className="page-container">
-        <div className="m-3 text-3xl font-bold text-center ">
+        <div className="m-3 text-lg font-bold text-center md:text-3xl ">
           FLASH DEALS
           <ItemList></ItemList>
         </div>
@@ -26,7 +26,7 @@ const Home = () => {
         className="w-full"
       ></Banner>
 
-      <div className="flex flex-row gap-5 mt-20 page-container">
+      {/* <div className="gap-20 mt-20 page-container">
         <div className="flex flex-col ">
           <img
             src="https://fruitshop.7uptheme.net/wp-content/uploads/2017/04/fruit_blog_09.jpg"
@@ -65,7 +65,7 @@ const Home = () => {
             className="w-full"
           />
         </div>
-      </div>
+      </div> */}
     </Fragment>
   );
 };

@@ -21,16 +21,18 @@ const Detail = () => {
         className="h-[200px] w-full object-cover"
         children="Detail"
       ></Banner>
-      <div className="flex flex-col gap-4 mt-5 page-container">
-        <div className="flex flex-row">
-          <img src={item.img} alt="" className="border w-[350px]" />
+      <div className="flex flex-col mt-5 md:gap-4 page-container">
+        <div className="flex flex-col text-sm md:flex-row">
+          <img src={item.img} alt="" className="w-[350px]" />
           <div className="m-5">
-            <div className="text-3xl font-bold ">{item.title}</div>
-            <div className="text-2xl text-red-500 ">Price: {item.price}$</div>
-            <div className="text-lg font-bold">{item.desc}</div>
+            <div className="font-bold md:text-3xl ">{item.title}</div>
+            <div className="text-red-500 md:text-2xl ">
+              Price: {item.price}$
+            </div>
+            <div className="font-bold md:text-lg">{item.desc}</div>
             <button
               onClick={() => hanldeAddToCart(item)}
-              className="p-2 mt-2 text-xl text-white bg-red-500 rounded-lg"
+              className="p-2 mt-2 text-white bg-red-500 rounded-lg md:text-xl"
             >
               ADD TO CART
             </button>

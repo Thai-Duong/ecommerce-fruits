@@ -8,15 +8,19 @@ const ItemCard = ({ item }) => {
     dispacth(addToCart(item));
   };
   return (
-    <div className="relative w-[200px] bg-[#fde4e4] text-black  m-5 border rounded-lg ">
+    <div className="text-[10px] w-[100px] md:w-[200px] mr-0 bg-[#fde4e4] text-black mt-5 border rounded-lg">
       <NavLink to={`/products/${item.id}`}>
-        <img src={item.img} alt="" className="h-[200px] object-cover" />
+        <img
+          src={item.img}
+          alt=""
+          className="md:h-[200px] h-[100px] object-cover"
+        />
       </NavLink>
-      <div className="w-full p-2 text-xl ">{item.title}</div>
-      <div className="text-lg text-red-700 bg-primary">${item.price}</div>
+      <div className="w-full md:p-2 md:text-xl ">{item.title}</div>
+      <div className="text-red-700 md:text-lg bg-primary">${item.price}</div>
       <button
         onClick={() => hanldeAddToCart(item)}
-        className="w-full p-2 text-sm text-white bg-[#66cc33] rounded-lg "
+        className="w-full md:p-2 md:text-sm text-white bg-[#66cc33] rounded-lg "
       >
         ADD TO CART
       </button>

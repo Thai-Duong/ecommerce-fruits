@@ -29,7 +29,7 @@ const Login = () => {
         children="Login"
       ></Banner>
       <form onSubmit={handleSubmit(onSubmit)} className="page-container">
-        <div className="w-[400px] mx-auto my-10">
+        <div className="md:w-[400px] md:mx-auto w-[350px] mx-auto my-5">
           <div className="flex flex-col gap-3">
             <label htmlFor="email">Email</label>
             <Input
