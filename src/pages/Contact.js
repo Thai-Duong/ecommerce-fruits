@@ -30,10 +30,8 @@ const Contact = () => {
         children="Contact"
       ></Banner>
       <form onSubmit={handleSubmit(onSubmit)} className="page-container">
-        <div className="w-[500px] mx-auto my-10 ">
-          <div className="p-2 mb-4 text-3xl text-center text-black ">
-            Feedback
-          </div>
+        <div className="md:w-[400px] md:mx-auto w-[350px] mx-auto my-5">
+          <div className="p-2 mb-4 text-3xl text-center text-black "></div>
           <div className="flex flex-col gap-3 mt-5">
             <Input
               name="name"
