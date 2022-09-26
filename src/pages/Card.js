@@ -34,7 +34,7 @@ const Card = () => {
       <div className="page-container">
         {cart.length > 0 ? (
           <div className="flex flex-col text-sm lg:flex-row lg:text-lg">
-            <div className="lg:w-[70%]  text-center">
+            <div className="lg:w-[70%] text-center">
               {cart.length > 0 &&
                 cart.map((item) => (
                   <ItemCart
