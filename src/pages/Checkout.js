@@ -25,8 +25,8 @@ const Checkout = () => {
   const onSubmit = (data) => console.log(data);
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="p-5 page-container">
-      <div className="flex gap-3 mt-10 text-xl ">
-        <div className="w-[70%] p-5 border rounded-lg">
+      <div className="flex gap-3 mt-20 text-xl flex-col lg:flex-row">
+        <div className="lg:w-[70%] p-5 border rounded-lg">
           <div className="flex gap-3">
             <div className="w-1/2">
               <div>FristName</div>
@@ -77,7 +77,7 @@ const Checkout = () => {
             ></Input>
           </div>
         </div>
-        <div className="w-[30%] text-xl p-5 border rounded-lg">
+        <div className="lg:w-[30%] text-xl p-5 border rounded-lg">
           <div className="flex justify-between p-2">
             <span>Your Cart</span>
             <span>{cart.length}</span>
